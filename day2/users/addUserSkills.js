@@ -48,9 +48,15 @@ function addUser(usersData) {
   let findUser = usersData.find((user) => user.name === name);
 
   if (findUser) {
-    findUser.skills.push("JQ");
+    let newSkill = "JQ";
+    let userSkills = findUser.skills.some((skill) => skill === newSkill);
+    if (!userSkills) {
+      findUser.skills.push(newSkill);
+      return findUser;
+    } else {
+      return "This skill user already have.";
+    }
     //return only find user data with added skills
-    return findUser;
   } else {
     let message = "User Not Found";
     return message;
