@@ -49,7 +49,7 @@ function addUser(usersData) {
 
   if (findUser) {
     findUser.skills.push("JQ");
-    //return only find user data
+    //return only find user data with added skills
     return findUser;
   } else {
     let message = "User Not Found";
