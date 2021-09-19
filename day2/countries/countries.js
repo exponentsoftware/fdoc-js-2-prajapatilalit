@@ -14,9 +14,9 @@ const countries = [
 
 function createArrayOfArrays(countriesArray) {
   let newArray = countriesArray.map((country) => {
-    let firstThreeLetter = country.split("").slice(0, 3).join("");
+    let firstThreeLetter = country.substr(0, 3).toUpperCase();
 
-    let countryNamelength = country.split("").length;
+    let countryNamelength = country.length;
 
     return [country, firstThreeLetter, countryNamelength];
   });
