@@ -44,18 +44,20 @@ const users = [
 ];
 
 function addUser(usersData) {
-  let name = "Thomas";
-  let findUser = usersData.find((user) => user.name === name);
-
+  let newUser = {
+    name: "Maira",
+    scores: 87,
+    skills: ["REACTJS", "JS"],
+    age: 26,
+  };
+  let findUser = usersData.some((user) => user.name === newUser.name);
   if (findUser) {
-    findUser.skills.push("JQ");
-    //return only find user data
-    return findUser;
-  } else {
-    let message = "User Not Found";
+    let message = "User already exist";
     return message;
+  } else {
+    usersData.push(newUser);
+    return usersData;
   }
-  //return all user data
-  //   return usersData;
 }
+
 console.log(addUser(users));
