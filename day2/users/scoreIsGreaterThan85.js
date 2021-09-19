@@ -44,6 +44,7 @@ const users = [
 ];
 
 function scoreIsGreaterThan85(usersData) {
+  // Using map method
   //   let scoreGT85 = [];
 
   //   usersData.map((user) => {
@@ -52,6 +53,7 @@ function scoreIsGreaterThan85(usersData) {
   //     }
   //   });
 
+  //Using filter method
   let scoreGT85 = usersData.filter((user) => user.scores > 85);
   return scoreGT85;
 }
